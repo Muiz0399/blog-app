@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { API_URL } from "../config.js"; 
 
 function Detail() {
   const { id } = useParams(); // Get blog ID from the URL parameters
@@ -16,7 +17,7 @@ function Detail() {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4001/api/users/current`,
+          `${API_URL}/users/current`,
           {
             withCredentials: true,
             headers: {
@@ -39,7 +40,7 @@ function Detail() {
     const fetchBlogs = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4001/api/blogs/single-blog/${id}`,
+          `${API_URL}/blogs/single-blog/${id}`,
           {
             withCredentials: true,
             headers: {
@@ -60,7 +61,7 @@ function Detail() {
     const fetchComments = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4001/api/comments/blog/${id}`,
+          `${API_URL}/comments/blog/${id}`,
           {
             withCredentials: true,
             headers: {
@@ -86,7 +87,7 @@ function Detail() {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:4001/api/comments/add`,
+        `${API_URL}/comments/add`,
         {
           blogId: id,
           commentText: newComment, // Pass the comment text to the API
@@ -114,7 +115,7 @@ function Detail() {
   const handleDeleteComment = async (commentId) => {
     try {
       await axios.delete(
-        `http://localhost:4001/api/comments/delete/${commentId}`,
+        `${API_URL}/comments/delete/${commentId}`,
         {
           withCredentials: true,
           headers: {

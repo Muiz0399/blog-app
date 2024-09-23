@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import { API_URL } from "../config.js"; 
 
 function Login() {
   const { isAuthenticated, setIsAuthenticated, setProfile } = useAuth();
@@ -21,7 +22,7 @@ function Login() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4001/api/users/login",
+        `${API_URL}/users/login`,
         { email, password, role },
         {
           withCredentials: true,
