@@ -17,15 +17,13 @@ const MONGO_URL = process.env.MONGO_URI;
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     origin: process.env.FRONTEND_URL,
-//     credentials: true,
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//   })
-// );
-app.use(cors({ origin: '*', credentials: true }));
-
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 app.post('/api/users/login', (req, res) => {
   console.log('Login request received:', req.body);
  
