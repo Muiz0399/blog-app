@@ -24,10 +24,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-app.post('/api/users/login', (req, res) => {
-  console.log('Login request received:', req.body);
- 
-});
+
 app.use(
   fileUpload({
     useTempFiles: true,
