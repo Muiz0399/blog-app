@@ -54,24 +54,20 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-gray-800">
-                  DhiWise vs Anima
+                  React Vs Angular
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-gray-800">
-                  DhiWise vs Appsmith
+                  SQL Vs NoSql
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-gray-800">
-                  DhiWise vs FlutterFlow
+                  CSS Vs Tailwind
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-gray-800">
-                  DhiWise vs Monday Hero
-                </a>
-              </li>
+           
              
               
             </ul>
